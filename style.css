@@ -15,11 +15,12 @@ header {
 
 main {
     margin: 20px;
-    padding-bottom: 60px; /* pour ne pas que le footer cache le contenu */
+    padding-bottom: 60px; /* espace pour le footer */
 }
 
 main img {
-    max-width: 100%;
+    max-width: 600px; /* image ne dépassera jamais 600px */
+    width: 100%;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -29,11 +30,17 @@ section {
     margin-bottom: 40px;
 }
 
+main p, main li, main h2 {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
 footer {
     background-color: #333;
     color: white;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
-    width: 50%;
+    width: 100%;
 }
