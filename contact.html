@@ -53,5 +53,26 @@
   <footer>
     <p>&copy; 2025 Edénélia</p>
   </footer>
+
+  <!-- Redirection après envoi du formulaire -->
+  <script>
+    const form = document.querySelector('.form-contact');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = 'thanks.html'; // page de remerciement
+        } else {
+          alert("Une erreur est survenue, réessayez.");
+        }
+      }).catch(error => {
+        alert("Une erreur est survenue, réessayez.");
+      });
+    });
+  </script>
 </body>
 </html>

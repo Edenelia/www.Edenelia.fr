@@ -68,7 +68,7 @@ main h2 {
 
 section {
   margin-bottom: 40px;
-  scroll-margin-top: 100px; /* évite que les titres soient cachés */
+  scroll-margin-top: 100px;
 }
 
 /* --- FOOTER --- */
@@ -201,9 +201,30 @@ iframe {
 }
 
 @media (max-width: 600px) {
+  header {
+    padding: 10px 0; /* bandeau plus compact */
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+  }
+
   nav ul {
-    flex-direction: column;
+    flex-direction: row; /* liens côte à côte */
     gap: 10px;
+    overflow-x: auto; /* scroll horizontal si trop long */
+    justify-content: flex-start;
+    white-space: nowrap; /* empêche les liens de sauter à la ligne */
+    padding: 0 10px;
+    -webkit-overflow-scrolling: touch; /* scroll fluide iOS */
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none; /* masque scrollbar */
+  }
+
+  nav ul li {
+    flex: 0 0 auto; /* empêche les liens de s'étirer */
   }
 
   main p,
@@ -220,5 +241,11 @@ iframe {
 
   .form-contact button {
     padding: 8px 16px;
+  }
+
+  .prestation img,
+  .image-contact,
+  .contact-info {
+    max-width: 95%;
   }
 }
