@@ -93,8 +93,7 @@ footer {
 }
 
 .prestation img {
-  max-width: 400px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 20px auto;
@@ -110,24 +109,13 @@ footer {
 
 /* --- IMAGE CONTACT --- */
 .image-contact {
-  max-width: 500px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 20px auto;
   border-radius: 15px;
   border: 2px solid #4CAF50;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* --- IMAGE ACCUEIL --- */
-.home-image {
-  width: 100%;
-  max-width: 600px; /* seulement pour accueil */
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
 }
 
 /* --- CONTACT INFO --- */
@@ -201,8 +189,9 @@ iframe {
     gap: 15px;
   }
   .prestation img,
-  .image-contact {
-    max-width: 90%; /* conserve proportion des images Prestations et Contact */
+  .image-contact,
+  .contact-info {
+    max-width: 90%;
   }
   .form-contact {
     max-width: 90%;
@@ -210,30 +199,33 @@ iframe {
 }
 
 @media (max-width: 600px) {
-  /* --- MENU CENTRÉ --- */
-  header h1 {
-    margin-bottom: 10px;
-  }
-
+  /* Menu horizontal scrollable */
   nav ul {
-    flex-direction: column; /* menu vertical */
-    align-items: center;    /* centre les items */
+    flex-direction: row; /* liens côte à côte */
     gap: 10px;
-    padding: 0;
-    margin: 0;
+    overflow-x: auto;
+    justify-content: flex-start;
+    white-space: nowrap;
+    padding: 0 10px;
+    -webkit-overflow-scrolling: touch;
   }
 
-  nav ul li a {
-    display: block;
-    text-align: center;
+  nav ul::-webkit-scrollbar {
+    display: none; /* masque la scrollbar */
   }
 
+  nav ul li {
+    flex: 0 0 auto;
+  }
+
+  /* Texte plus petit */
   main p,
   main li,
   main h2 {
     font-size: 16px;
   }
 
+  /* Formulaire réduit */
   .form-contact input,
   .form-contact textarea {
     font-size: 14px;
@@ -244,8 +236,15 @@ iframe {
     padding: 8px 16px;
   }
 
-  /* --- IMAGE ACCUEIL PLUS PETITE --- */
-  .home-image {
-    max-width: 90%; /* limite largeur image accueil sur mobile */
+  /* Images adaptatives */
+  .prestation img,
+  .image-contact {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .contact-info {
+    max-width: 100%;
   }
 }
