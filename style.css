@@ -57,7 +57,9 @@ main {
   margin: 100px 20px 60px 20px; /* espace pour header fixe et footer */
 }
 
-main p, main li, main h2 {
+main p,
+main li,
+main h2 {
   font-size: 18px;
   line-height: 1.6;
   text-align: center;
@@ -68,14 +70,6 @@ section {
   scroll-margin-top: 100px; /* évite que les titres soient cachés */
 }
 
-main img {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
 /* --- FOOTER --- */
 footer {
   background-color: #333;
@@ -84,26 +78,11 @@ footer {
   text-align: center;
 }
 
-/* --- STYLES COMMUNS POUR BOÎTES ET IMAGES --- */
+/* --- STYLES COMMUNS POUR BOÎTES --- */
 .styled-box {
   border-radius: 15px;
   border: 2px solid #4CAF50;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* iframe et images de prestations/contact */
-iframe,
-.prestation img,
-.image-contact,
-.contact-info {
-  max-width: 100%;
-  display: block;
-  margin: 20px auto;
-}
-
-.prestation img,
-.image-contact {
-  border-radius: 10px; /* plus petit que contact-info */
 }
 
 /* --- PRESTATIONS --- */
@@ -112,21 +91,46 @@ iframe,
   text-align: center;
 }
 
+.prestation img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .prestation p {
   margin-top: 10px;
   font-size: 18px;
 }
 
-/* --- CONTACT --- */
+/* --- IMAGE CONTACT --- */
+.image-contact {
+  max-width: 500px;
+  width: 100%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- CONTACT INFO --- */
 .contact-info {
   background-color: #e8f5e9;
   padding: 20px;
   max-width: 500px;
   margin: 20px auto;
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: left;
 }
 
+/* --- FORMULAIRE --- */
 .form-contact {
   display: flex;
   flex-direction: column;
@@ -163,13 +167,23 @@ iframe,
   outline-offset: 2px;
 }
 
+/* --- IFRAME (si utilisé) --- */
+iframe {
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   main img {
     max-width: 100%;
   }
