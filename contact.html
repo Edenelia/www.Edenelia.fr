@@ -40,11 +40,11 @@
         <p>📍 <strong>Zone d’intervention :</strong> Quimper et ses alentours</p>
       </div>
 
-      <!-- FORMULAIRE DE CONTACT -->
-      <form class="form-contact">
-        <input type="text" placeholder="Votre nom" required>
-        <input type="email" placeholder="Votre email" required>
-        <textarea placeholder="Votre message" rows="5" required></textarea>
+      <!-- FORMULAIRE DE CONTACT VIA FORMSPREE -->
+      <form class="form-contact" action="https://formspree.io/f/xldoqepg" method="POST">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
     </section>
