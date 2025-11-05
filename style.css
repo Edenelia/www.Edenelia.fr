@@ -21,6 +21,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  text-align: center;
 }
 
 header h1 {
@@ -94,6 +95,7 @@ footer {
 
 .prestation img {
   max-width: 100%;
+  width: 400px;       /* taille fixe sur desktop pour prestations */
   height: auto;
   display: block;
   margin: 20px auto;
@@ -110,6 +112,19 @@ footer {
 /* --- IMAGE CONTACT --- */
 .image-contact {
   max-width: 100%;
+  width: 500px;       /* taille fixe sur desktop pour contact */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- IMAGE ACCUEIL UNIQUEMENT --- */
+.home-image {
+  max-width: 100%;
+  width: 600px; /* taille par défaut sur desktop pour accueil */
   height: auto;
   display: block;
   margin: 20px auto;
@@ -188,9 +203,9 @@ iframe {
   nav ul {
     gap: 15px;
   }
+  /* Conserve tailles gravées pour prestations & contact, mais limiter à 90% */
   .prestation img,
-  .image-contact,
-  .contact-info {
+  .image-contact {
     max-width: 90%;
   }
   .form-contact {
@@ -199,23 +214,25 @@ iframe {
 }
 
 @media (max-width: 600px) {
-  /* Menu horizontal scrollable */
+  /* --- MENU CENTRÉ & ADAPTÉ --- */
+  header {
+    padding: 15px 10px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
   nav ul {
-    flex-direction: row; /* liens côte à côte */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    white-space: nowrap;
-    padding: 0 10px;
-    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
   }
-
-  nav ul::-webkit-scrollbar {
-    display: none; /* masque la scrollbar */
-  }
-
-  nav ul li {
-    flex: 0 0 auto;
+  nav ul li a {
+    display: block;
+    text-align: center;
   }
 
   /* Texte plus petit */
@@ -231,17 +248,21 @@ iframe {
     font-size: 14px;
     padding: 8px;
   }
-
   .form-contact button {
     padding: 8px 16px;
   }
 
-  /* Images adaptatives */
+  /* --- IMAGE ACCUEIL ADAPTÉE --- */
+  .home-image {
+    width: 95%;  /* image accueil plus large mais contenue */
+  }
+
+  /* Prestations & Contact images : restent grand but s’adaptent */
   .prestation img,
   .image-contact {
     width: 100%;
-    height: auto;
     max-width: 100%;
+    height: auto;
   }
 
   .contact-info {
