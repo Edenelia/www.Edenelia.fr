@@ -1,3 +1,4 @@
+/* --- STYLE GLOBAL --- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +6,10 @@ body {
   background-color: #f0f0f0;
   color: #333;
   text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* --- HEADER ET MENU FIXE --- */
@@ -29,6 +34,7 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -38,14 +44,28 @@ nav ul li a {
   transition: color 0.3s, transform 0.2s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   text-decoration: underline;
   transform: scale(1.1);
+  outline: 3px solid #81C784;
+  outline-offset: 2px;
 }
 
 /* --- CONTENU PRINCIPAL --- */
 main {
   margin: 100px 20px 60px 20px; /* espace pour header fixe et footer */
+}
+
+main p, main li, main h2 {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 40px;
+  scroll-margin-top: 100px; /* évite que les titres soient cachés */
 }
 
 main img {
@@ -56,55 +76,107 @@ main img {
   margin: 20px auto;
 }
 
-section {
-  margin-bottom: 40px;
-  scroll-margin-top: 100px; /* évite que les titres soient cachés */
-}
-
-/* --- TEXTE --- */
-main p, main li, main h2 {
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* --- DÉFILEMENT FLUIDE --- */
-html {
-  scroll-behavior: smooth;
-}
-
-/* --- FOOTER FIXE --- */
+/* --- FOOTER --- */
 footer {
   background-color: #333;
   color: white;
   padding: 10px 0;
   text-align: center;
-  /* Supprime ou commente les lignes suivantes */
-  /* position: fixed; */
-  /* bottom: 0; */
-  /* width: 100%; */
 }
-/* Dans style.css */
-iframe {
+
+/* --- STYLES COMMUNS POUR BOÎTES ET IMAGES --- */
+.styled-box {
   border-radius: 15px;
   border: 2px solid #4CAF50;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* iframe et images de prestations/contact */
+iframe,
+.prestation img,
+.image-contact,
+.contact-info {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+}
+
+.prestation img,
+.image-contact {
+  border-radius: 10px; /* plus petit que contact-info */
+}
+
+/* --- PRESTATIONS --- */
 .prestation {
   margin-bottom: 30px;
   text-align: center;
 }
 
-.prestation img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #4CAF50;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
 .prestation p {
   margin-top: 10px;
   font-size: 18px;
+}
+
+/* --- CONTACT --- */
+.contact-info {
+  background-color: #e8f5e9;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.form-contact input,
+.form-contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form-contact button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.form-contact button:hover,
+.form-contact button:focus {
+  background-color: #45a049;
+  outline: 3px solid #81C784;
+  outline-offset: 2px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  main img {
+    max-width: 100%;
+  }
+
+  .prestation img,
+  .image-contact,
+  .contact-info {
+    max-width: 90%;
+  }
 }
