@@ -21,6 +21,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  text-align: center;
 }
 
 header h1 {
@@ -94,6 +95,7 @@ footer {
 
 .prestation img {
   max-width: 100%;
+  width: 400px;
   height: auto;
   display: block;
   margin: 20px auto;
@@ -110,6 +112,7 @@ footer {
 /* --- IMAGE CONTACT --- */
 .image-contact {
   max-width: 100%;
+  width: 500px;
   height: auto;
   display: block;
   margin: 20px auto;
@@ -199,33 +202,41 @@ iframe {
 }
 
 @media (max-width: 600px) {
-  /* Menu horizontal scrollable */
-  nav ul {
-    flex-direction: row; /* liens côte à côte */
-    gap: 10px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    white-space: nowrap;
-    padding: 0 10px;
-    -webkit-overflow-scrolling: touch;
+  header {
+    padding: 15px 10px;
   }
 
-  nav ul::-webkit-scrollbar {
-    display: none; /* masque la scrollbar */
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;   /* menu sous le titre */
+    justify-content: center;   /* centré horizontalement */
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
   }
 
   nav ul li {
     flex: 0 0 auto;
   }
 
-  /* Texte plus petit */
+  .prestation img,
+  .image-contact {
+    max-width: 80%;   /* images plus petites sur mobile */
+    height: auto;
+    margin: 15px auto;
+  }
+
   main p,
   main li,
   main h2 {
     font-size: 16px;
   }
 
-  /* Formulaire réduit */
   .form-contact input,
   .form-contact textarea {
     font-size: 14px;
@@ -234,17 +245,5 @@ iframe {
 
   .form-contact button {
     padding: 8px 16px;
-  }
-
-  /* Images adaptatives */
-  .prestation img,
-  .image-contact {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
-  .contact-info {
-    max-width: 100%;
   }
 }
