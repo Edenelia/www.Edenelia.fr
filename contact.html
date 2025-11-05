@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Edénélia</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
     <h1>Edénélia</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="prestations.html">Prestations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="implantation.html">Implantation</a></li>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./prestations.html">Prestations</a></li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
+        <li><a href="./implantation.html">Implantation</a></li>
       </ul>
     </nav>
   </header>
@@ -22,8 +22,31 @@
   <main>
     <section>
       <h2>Contactez-nous</h2>
-      <p>Téléphone : <strong>06 03 85 43 64</strong></p>
-      <p>Email : <a href="mailto:edenelia.contact@gmail.com">edenelia.contact@gmail.com</a></p>
+
+      <!-- IMAGE CONTACT -->
+      <img src="./images/contact-jardin.jpg" alt="Illustration contact Edénélia" class="image-contact">
+
+      <!-- TEXTE DE CONTACT -->
+      <p>
+        Besoin d’un coup de main pour entretenir votre jardin ou désencombrer votre espace ?  
+        Contactez <strong>Edénélia</strong> — nous serons ravis d’échanger avec vous 🌿
+      </p>
+
+      <!-- COORDONNÉES -->
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+        <p>📞 <strong>Téléphone :</strong> 06 03 85 43 64</p>
+        <p>✉️ <strong>Email :</strong> <a href="mailto:edenelia.contact@gmail.com">edenelia.contact@gmail.com</a></p>
+        <p>📍 <strong>Zone d’intervention :</strong> Quimper et ses alentours</p>
+      </div>
+
+      <!-- FORMULAIRE DE CONTACT -->
+      <form class="form-contact">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea placeholder="Votre message" rows="5" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
     </section>
   </main>
 
