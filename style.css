@@ -29,6 +29,7 @@ header h1 {
   font-size: 1.8rem;
 }
 
+/* --- NAVIGATION --- */
 nav ul {
   list-style: none;
   padding: 0;
@@ -56,7 +57,7 @@ nav ul li a:focus {
 
 /* --- CONTENU PRINCIPAL --- */
 main {
-  margin: 100px 20px 60px 20px; /* espace pour header fixe et footer */
+  margin: 120px 20px 60px 20px; /* ajusté : espace pour header fixe + footer */
 }
 
 main p,
@@ -69,7 +70,7 @@ main h2 {
 
 section {
   margin-bottom: 40px;
-  scroll-margin-top: 100px; /* évite que les titres soient cachés */
+  scroll-margin-top: 120px; /* évite que le header fixe cache le début de section */
 }
 
 /* --- FOOTER --- */
@@ -95,7 +96,7 @@ footer {
 
 .prestation img {
   max-width: 100%;
-  width: 400px;       /* taille fixe sur desktop pour prestations */
+  width: 400px;
   height: auto;
   display: block;
   margin: 20px auto;
@@ -112,7 +113,7 @@ footer {
 /* --- IMAGE CONTACT --- */
 .image-contact {
   max-width: 100%;
-  width: 500px;       /* taille fixe sur desktop pour contact */
+  width: 500px;
   height: auto;
   display: block;
   margin: 20px auto;
@@ -124,7 +125,7 @@ footer {
 /* --- IMAGE ACCUEIL UNIQUEMENT --- */
 .home-image {
   max-width: 100%;
-  width: 600px; /* taille par défaut sur desktop pour accueil */
+  width: 600px; /* taille par défaut sur desktop */
   height: auto;
   display: block;
   margin: 20px auto;
@@ -195,7 +196,7 @@ iframe {
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   main {
-    margin: 120px 15px 60px 15px;
+    margin: 140px 15px 60px 15px; /* ajusté pour tablette */
   }
   header h1 {
     font-size: 1.6rem;
@@ -203,7 +204,6 @@ iframe {
   nav ul {
     gap: 15px;
   }
-  /* Conserve tailles gravées pour prestations & contact, mais limiter à 90% */
   .prestation img,
   .image-contact {
     max-width: 90%;
@@ -211,10 +211,12 @@ iframe {
   .form-contact {
     max-width: 90%;
   }
+  .home-image {
+    width: 80%;
+  }
 }
 
 @media (max-width: 600px) {
-  /* --- MENU CENTRÉ & ADAPTÉ --- */
   header {
     padding: 15px 10px;
   }
@@ -234,15 +236,14 @@ iframe {
     display: block;
     text-align: center;
   }
-
-  /* Texte plus petit */
+  main {
+    margin: 160px 10px 50px 10px; /* plus gros margin-top pour mobile */
+  }
   main p,
   main li,
   main h2 {
     font-size: 16px;
   }
-
-  /* Formulaire réduit */
   .form-contact input,
   .form-contact textarea {
     font-size: 14px;
@@ -251,20 +252,14 @@ iframe {
   .form-contact button {
     padding: 8px 16px;
   }
-
-  /* --- IMAGE ACCUEIL ADAPTÉE --- */
   .home-image {
-    width: 95%;  /* image accueil plus large mais contenue */
+    width: 95%;
   }
-
-  /* Prestations & Contact images : restent grand but s’adaptent */
   .prestation img,
   .image-contact {
     width: 100%;
     max-width: 100%;
-    height: auto;
   }
-
   .contact-info {
     max-width: 100%;
   }
