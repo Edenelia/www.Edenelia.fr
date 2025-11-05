@@ -57,7 +57,7 @@ nav ul li a:focus {
 
 /* --- CONTENU PRINCIPAL --- */
 main {
-  margin: 120px 20px 60px 20px; /* ajusté : espace pour header fixe + footer */
+  margin: 140px 20px 60px 20px; /* ajustement pour header fixe */
 }
 
 main p,
@@ -70,7 +70,7 @@ main h2 {
 
 section {
   margin-bottom: 40px;
-  scroll-margin-top: 120px; /* évite que le header fixe cache le début de section */
+  scroll-margin-top: 140px; /* compensation du header fixe */
 }
 
 /* --- FOOTER --- */
@@ -125,7 +125,7 @@ footer {
 /* --- IMAGE ACCUEIL UNIQUEMENT --- */
 .home-image {
   max-width: 100%;
-  width: 600px; /* taille par défaut sur desktop */
+  width: 600px; /* desktop */
   height: auto;
   display: block;
   margin: 20px auto;
@@ -196,7 +196,7 @@ iframe {
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   main {
-    margin: 140px 15px 60px 15px; /* ajusté pour tablette */
+    margin: 160px 15px 60px 15px;
   }
   header h1 {
     font-size: 1.6rem;
@@ -237,7 +237,7 @@ iframe {
     text-align: center;
   }
   main {
-    margin: 160px 10px 50px 10px; /* plus gros margin-top pour mobile */
+    margin: 180px 10px 50px 10px;
   }
   main p,
   main li,
