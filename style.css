@@ -1395,7 +1395,7 @@ header .logo a {
     margin: 0 0 10px;
     color: var(--ink);
     font-size: clamp(1.45rem, 2.5vw, 2rem);
-    font-weight: 500;.creation-contact {
+    font-weight: 500;
 }
 
 .desencombrement-service-content p {
