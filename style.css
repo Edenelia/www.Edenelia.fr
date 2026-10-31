@@ -1352,3 +1352,71 @@ header .logo a {
         margin-bottom: 6px;
     }
 }
+
+/* ============================================
+   DESENCOMBREMENT : PRESTATIONS EN LIGNES
+   Meme presentation que Creation et Entretien
+   ============================================ */
+
+.desencombrement-services-list {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.desencombrement-service-row {
+    display: grid;
+    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(20px, 4vw, 52px);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.desencombrement-service-row:last-child {
+    border-bottom: none;
+}
+
+.desencombrement-service-photo {
+    width: 100%;
+    height: 205px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--sage-light);
+}
+
+.desencombrement-service-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desencombrement-service-content h3 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 500;
+}
+
+.desencombrement-service-content p {
+    margin: 0;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+    .desencombrement-service-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        padding: 18px 0 24px;
+    }
+
+    .desencombrement-service-photo {
+        height: 195px;
+    }
+
+    .desencombrement-service-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+}

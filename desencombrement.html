@@ -1,125 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Désencombrement - Edénélia</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Découvrez les prestations de désencombrement intérieur et extérieur d'Edénélia à Quimper et ses environs.">
+  <title>Désencombrement - Edénélia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">❧</span>
+      <span>
+        <strong>Edénélia</strong>
+        <small>Création · Entretien · Désencombrement</small>
+      </span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="creation.html">Création</a>
+      <a href="entretien.html">Entretien</a>
+      <a href="desencombrement.html">Désencombrement</a>
+      <a href="contact.html">Contact / Devis</a>
+    </nav>
+  </header>
 
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <span class="brand-mark" aria-hidden="true">❧</span>
-    <span>
-      <strong>Edénélia</strong>
-      <small>Création · Entretien · Désencombrement</small>
-    </span>
-  </a>
+  <main>
+    <section class="creation-hero">
+      <div class="creation-intro">
+        <p class="eyebrow">Edénélia · Désencombrement</p>
+        <h1>Retrouvons ensemble des espaces agréables à vivre</h1>
+        <p>
+          Edénélia vous accompagne dans le désencombrement
+          de vos espaces intérieurs et extérieurs.
+          Un accompagnement pour faire de la place,
+          retrouver de la clarté et profiter pleinement
+          de votre environnement.
+        </p>
+        <a href="contact.html" class="button button-primary">Demander un devis →</a>
+      </div>
+    </section>
 
-  <button class="menu-toggle" aria-expanded="false"
-    aria-controls="main-nav">Menu</button>
+    <section class="creation-section">
+      <div class="section-heading">
+        <span></span>
+        <h2>Nos prestations</h2>
+        <span></span>
+      </div>
+      <p class="section-subtitle">
+        Un espace libéré, un esprit plus léger. Que ce soit à l'intérieur ou à l'extérieur,
+        nous vous aidons à retrouver des espaces dégagés et fonctionnels.
+      </p>
 
-  <nav id="main-nav" class="main-nav">
-    <a href="index.html">Accueil</a>
-    <a href="creation.html">Création</a>
-    <a href="entretien.html">Entretien</a>
-    <a href="desencombrement.html">Désencombrement</a>
-    <a href="contact.html">Contact / Devis</a>
-  </nav>
-</header>
-
-    <main>
-
-        <section class="creation-hero">
-            <div class="creation-intro">
-                <p class="eyebrow">Edénélia · Désencombrement</p>
-
-                <h1>Retrouvons ensemble des espaces agréables à vivre</h1>
-
-                <p>
-                    Edénélia vous accompagne dans le désencombrement
-                    de vos espaces intérieurs et extérieurs.
-                    Un accompagnement pour faire de la place,
-                    retrouver de la clarté et profiter pleinement
-                    de votre environnement.
-                </p>
-
-                <a href="contact.html" class="button button-primary">
-                    Demander un devis →
-                </a>
-            </div>
-        </section>
-
-        <section class="creation-section">
-
-            <div class="section-heading">
-                <p class="eyebrow">Nos prestations</p>
-                <h2>Un espace libéré, un esprit plus léger</h2>
-            </div>
-
-            <p class="section-subtitle">
-                Que ce soit à l'intérieur ou à l'extérieur,
-                nous vous aidons à retrouver des espaces dégagés
-                et fonctionnels.
-            </p>
-
-            <div class="creation-grid">
-
-                <article class="creation-card">
-                    <img src="images/desencombrement-interieur.jpg"
-                         alt="Désencombrement intérieur">
-
-                    <div class="creation-card-content">
-                        <h3>Désencombrement intérieur</h3>
-                        <p>
-                            Tri, rangement et évacuation des objets
-                            encombrants pour retrouver un intérieur
-                            plus agréable, fonctionnel et organisé.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="creation-card">
-                    <img src="images/desencombrement-exterieur.jpg"
-                         alt="Désencombrement extérieur">
-
-                    <div class="creation-card-content">
-                        <h3>Désencombrement extérieur</h3>
-                        <p>
-                            Nettoyage et libération de vos jardins,
-                            cours, terrasses et abords pour profiter
-                            pleinement de vos espaces extérieurs.
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="creation-contact">
-            <h2>Besoin de faire de la place ?</h2>
-
+      <div class="desencombrement-services-list">
+        <article class="desencombrement-service-row">
+          <div class="desencombrement-service-photo">
+            <img src="images/desencombrement-interieur.jpg" alt="Désencombrement intérieur" loading="lazy">
+          </div>
+          <div class="desencombrement-service-content">
+            <h3>Désencombrement intérieur</h3>
             <p>
-                Contactez Edénélia pour échanger sur votre besoin
-                et trouver ensemble la solution adaptée.
+              Tri, rangement et évacuation des objets encombrants pour retrouver
+              un intérieur plus agréable, fonctionnel et organisé.
             </p>
+          </div>
+        </article>
 
-            <a href="contact.html" class="button-light">
-                Nous contacter
-            </a>
-        </section>
+        <article class="desencombrement-service-row">
+          <div class="desencombrement-service-photo">
+            <img src="images/desencombrement-exterieur.jpg" alt="Désencombrement extérieur" loading="lazy">
+          </div>
+          <div class="desencombrement-service-content">
+            <h3>Désencombrement extérieur</h3>
+            <p>
+              Nettoyage et libération de vos jardins, cours, terrasses et abords
+              pour profiter pleinement de vos espaces extérieurs.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    </main>
+    <section class="creation-contact">
+      <h2>Besoin de faire de la place ?</h2>
+      <p>
+        Contactez Edénélia pour échanger sur votre besoin
+        et trouver ensemble la solution adaptée.
+      </p>
+      <a href="contact.html" class="button button-light">Nous contacter →</a>
+    </section>
+  </main>
 
-    <footer class="site-footer">
-        <p>© Edénélia - Tous droits réservés</p>
-
-        <a href="mentions-legales.html">Mentions légales</a>
-    </footer>
-
-    <script src="script.js"></script>
-
+  <footer class="site-footer">
+    <p>© Edénélia - Tous droits réservés</p>
+    <a href="mentions-legales.html">Mentions légales</a>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
