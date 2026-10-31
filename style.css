@@ -1420,3 +1420,12 @@ header .logo a {
         margin-bottom: 6px;
     }
 }
+/* Réduction des montages avant/après - Désencombrement */
+img[src*="desencombrement-interieur"],
+img[src*="desencombrement-exterieur"] {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
