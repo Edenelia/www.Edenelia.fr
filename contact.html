@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contactez Edénélia à Quimper pour votre projet paysager. Demandez votre devis et joignez des photos ou vidéos de votre jardin.">
+  <meta name="description" content="Contactez Edénélia à Quimper pour votre projet paysager et demandez votre devis.">
   <title>Contact / Devis | Edénélia</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* PAGE CONTACT */
-
     .contact-page {
       padding: 65px 20px 80px;
       background: var(--cream, #f8f6ef);
@@ -97,42 +95,6 @@
       resize: vertical;
     }
 
-    .upload-section {
-      background: var(--cream, #f8f6ef);
-      border: 1px dashed var(--sage, #84927d);
-      border-radius: 8px;
-      padding: 25px;
-      margin-bottom: 25px;
-    }
-
-    .upload-section h3 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-
-    .upload-section p {
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .upload-section input {
-      display: block;
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    .upload-info {
-      font-size: 12px;
-      color: #777;
-      margin-top: 10px;
-    }
-
-    .file-list {
-      font-size: 13px;
-      margin-top: 12px;
-      overflow-wrap: anywhere;
-    }
-
     .consent-group {
       display: flex;
       align-items: flex-start;
@@ -159,6 +121,21 @@
 
     .contact-submit:hover {
       opacity: 0.9;
+    }
+
+    .upload-info {
+      font-size: 12px;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    /* Champ invisible anti-spam */
+    .anti-spam {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
 
     @media (max-width: 600px) {
@@ -203,8 +180,6 @@
 
   <main>
 
-    <!-- PRESENTATION -->
-
     <section class="creation-contact">
       <h2>Parlons de votre projet</h2>
       <p>
@@ -214,8 +189,6 @@
       </p>
     </section>
 
-    <!-- FORMULAIRE -->
-
     <section class="contact-page">
 
       <div class="contact-container">
@@ -224,20 +197,36 @@
           <p class="eyebrow">Edénélia · Contact</p>
           <h1>Demandez votre devis</h1>
           <p>
-            Décrivez-nous votre projet et partagez quelques photos
-            ou vidéos de votre jardin. Ces éléments nous permettront
-            de mieux comprendre vos besoins et de préparer
-            un devis plus adapté.
+            Décrivez-nous votre projet et vos attentes.
+            Nous vous répondrons dans les meilleurs délais
+            afin d'échanger sur votre jardin.
           </p>
         </div>
 
         <form
           class="contact-form"
-          action="traitement-contact.php"
+          action="https://formsubmit.co/contact@edenelia.fr"
           method="POST"
-          enctype="multipart/form-data"
           id="contact-form"
         >
+
+          <!-- Configuration de l'envoi -->
+          <input type="hidden" name="_subject"
+            value="Nouvelle demande de devis - Edénélia">
+
+          <input type="hidden" name="_next"
+            value="https://www.edenelia.fr/thanks.html">
+
+          <input type="hidden" name="_template"
+            value="table">
+
+          <!-- Protection anti-spam -->
+          <div class="anti-spam" aria-hidden="true">
+            <label for="website">Ne pas remplir</label>
+            <input type="text" id="website"
+              name="_honey" tabindex="-1"
+              autocomplete="off">
+          </div>
 
           <div class="contact-grid">
 
@@ -301,50 +290,7 @@
 
           </div>
 
-          <!-- AJOUT DE PHOTOS ET VIDEOS -->
-
-          <div class="upload-section">
-
-            <h3>📷 Partagez des photos de votre jardin</h3>
-
-            <p>
-              Pour nous aider à mieux visualiser votre extérieur,
-              vous pouvez joindre plusieurs photos ou vidéos
-              de votre jardin.
-            </p>
-
-            <p>
-              Cela nous permettra de mieux évaluer les travaux
-              à réaliser et de gagner du temps dans la préparation
-              de votre devis.
-            </p>
-
-            <label for="fichiers">
-              Sélectionner vos photos et vidéos
-            </label>
-
-            <input
-              type="file"
-              id="fichiers"
-              name="fichiers[]"
-              accept="image/jpeg,image/png,image/webp,image/heic,video/mp4,video/quicktime"
-              multiple
-            >
-
-            <p class="upload-info">
-              Formats acceptés : JPG, PNG, WEBP, HEIC, MP4 et MOV.
-              Maximum 8 fichiers de 20 Mo chacun.
-            </p>
-
-            <div id="file-list" class="file-list"
-              aria-live="polite"></div>
-
-          </div>
-
-          <!-- CONSENTEMENT -->
-
           <div class="consent-group">
-
             <input
               type="checkbox"
               id="consentement"
@@ -358,10 +304,7 @@
               utilisées par Edénélia afin de répondre à ma demande
               de contact et de devis. *
             </label>
-
           </div>
-
-          <!-- BOUTON -->
 
           <button
             type="submit"
@@ -377,12 +320,9 @@
         </form>
 
       </div>
-
     </section>
 
   </main>
-
-  <!-- PIED DE PAGE -->
 
   <footer class="site-footer">
     <p>
@@ -400,84 +340,6 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- CONTROLE DES FICHIERS -->
-
-  <script>
-    const fichiers = document.getElementById("fichiers");
-    const fileList = document.getElementById("file-list");
-    const formulaire = document.getElementById("contact-form");
-
-    const tailleMax = 20 * 1024 * 1024;
-    const nombreMax = 8;
-
-    fichiers.addEventListener("change", function () {
-
-      const selection = Array.from(fichiers.files);
-
-      fileList.innerHTML = "";
-
-      if (selection.length > nombreMax) {
-        alert("Vous pouvez sélectionner 8 fichiers maximum.");
-        fichiers.value = "";
-        return;
-      }
-
-      for (const fichier of selection) {
-
-        if (fichier.size > tailleMax) {
-          alert(
-            "Le fichier " + fichier.name +
-            " dépasse la limite de 20 Mo."
-          );
-
-          fichiers.value = "";
-          fileList.innerHTML = "";
-          return;
-        }
-
-      }
-
-      if (selection.length === 0) {
-        return;
-      }
-
-      const titre = document.createElement("strong");
-      titre.textContent = selection.length +
-        " fichier(s) sélectionné(s) :";
-
-      fileList.appendChild(titre);
-
-      const liste = document.createElement("ul");
-
-      selection.forEach(function (fichier) {
-        const element = document.createElement("li");
-        element.textContent = fichier.name;
-        liste.appendChild(element);
-      });
-
-      fileList.appendChild(liste);
-
-    });
-
-    formulaire.addEventListener("submit", function (event) {
-
-      if (!formulaire.checkValidity()) {
-        event.preventDefault();
-        formulaire.reportValidity();
-        return;
-      }
-
-      const selection = Array.from(fichiers.files);
-
-      if (selection.length > nombreMax ||
-          selection.some(fichier => fichier.size > tailleMax)) {
-        event.preventDefault();
-        alert("Veuillez vérifier les fichiers sélectionnés.");
-      }
-
-    });
-  </script>
 
 </body>
 </html>
