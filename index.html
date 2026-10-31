@@ -1,35 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil - Edénélia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edénélia — création, entretien et désencombrement à Quimper et ses environs.">
+  <title>Edénélia | Création, entretien & désencombrement</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Edénélia</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="prestations.html">Prestations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="implantation.html">Implantation</a></li>
-      </ul>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Edénélia, accueil">
+      <span class="brand-mark" aria-hidden="true">❧</span>
+      <span><strong>Edénélia</strong><small>Création · Entretien · Désencombrement</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="creation.html">Création</a>
+      <a href="entretien.html">Entretien</a>
+      <a href="desencombrement.html">Désencombrement</a>
+      <a href="#contact">Contact / Devis</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Bienvenue chez Edénélia</h2>
-      <p>Nous proposons des services d’entretien de jardin, de désencombrement intérieur et extérieur sur Quimper et ses alentours.</p>
-      <!-- Image de la page d'accueil avec classe spécifique -->
-      <img src="images/chatgpt_image.png" alt="Illustration du site Edénélia" class="home-image">
+  <main id="accueil">
+  <section class="hero" aria-label="Présentation d'Edénélia">
+    <div class="hero-photo" role="img" aria-label="Jardin aménagé avec terrasse et plantations"></div>
+    <div class="hero-panel">
+      <p class="eyebrow">Edénélia · Quimper et ses environs</p>
+      <h1>Un extérieur<br>qui vous ressemble</h1>
+      <p>Des espaces soignés, harmonieux et agréables à vivre.</p>
+
+      <a href="contact.html" class="button button-primary">
+        Demander un devis
+      </a>
+    </div>
+  </section>
+
+    <section class="values section-wrap" aria-labelledby="values-title">
+      <div class="section-heading">
+        <span></span><h2 id="values-title">Nos valeurs</h2><span></span>
+      </div>
+      <p class="section-subtitle">Un engagement au quotidien pour vos espaces et votre cadre de vie.</p>
+      <div class="values-grid">
+        <article class="value">
+          <span class="value-icon" aria-hidden="true">✿</span>
+          <h3>Un travail soigné<br>et de qualité</h3>
+        </article>
+        <article class="value">
+          <span class="value-icon" aria-hidden="true">♡</span>
+          <h3>Une écoute attentive<br>à vos besoins</h3>
+        </article>
+        <article class="value">
+          <span class="value-icon" aria-hidden="true">♧</span>
+          <h3>Des solutions durables<br>et adaptées</h3>
+        </article>
+        <article class="value">
+          <span class="value-icon" aria-hidden="true">⌂</span>
+          <h3>Une proximité<br>à Quimper et ses environs</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="reviews section-wrap" aria-labelledby="reviews-title">
+      <div class="review-photo" aria-hidden="true"></div>
+      <div class="review-content">
+        <div class="section-heading">
+          <span></span><h2 id="reviews-title">Ils nous font confiance</h2><span></span>
+        </div>
+        <div class="review-slider" aria-live="polite">
+          <p class="quote-mark" aria-hidden="true">“</p>
+          <blockquote id="review-text">Votre avis client pourra apparaître ici.</blockquote>
+          <p class="review-author" id="review-author">Avis client à ajouter</p>
+          <div class="review-controls">
+            <button id="previous-review" aria-label="Avis précédent">‹</button>
+            <span id="review-count">1 / 1</span>
+            <button id="next-review" aria-label="Avis suivant">›</button>
+          </div>
+        </div>
+        <p class="review-note">Les témoignages seront publiés avec l'accord de leurs auteurs.</p>
+      </div>
+    </section>
+
+    <section class="contact-strip" id="contact">
+      <div><strong>Un projet ?</strong><span>Parlons-en simplement.</span></div>
+      <a class="button button-light" href="mailto:contact@edenelia.fr">Nous contacter <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
-  <footer>
-     <p>&copy; 2025 Edénélia - <a href="./mentions-legales.html">Mentions légales</a></p>
+  <footer class="site-footer">
+    <p><strong>Edénélia</strong> <span>·</span> Quimper et ses environs <span>·</span> Création, entretien et désencombrement</p>
+    <p class="footer-small">© <span id="year"></span> Edénélia · Tous droits réservés</p>
   </footer>
+  <script src="script.js"></script>
 </body>
-</html
+</html>

@@ -1,78 +1,483 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Edénélia</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez Edénélia à Quimper pour votre projet paysager. Demandez votre devis et joignez des photos ou vidéos de votre jardin.">
+  <title>Contact / Devis | Edénélia</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PAGE CONTACT */
+
+    .contact-page {
+      padding: 65px 20px 80px;
+      background: var(--cream, #f8f6ef);
+    }
+
+    .contact-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-heading .eyebrow {
+      color: var(--sage, #84927d);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .contact-heading h1 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin: 12px 0;
+    }
+
+    .contact-heading p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .contact-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #deded6;
+      border-radius: 6px;
+      background: #fff;
+      font: inherit;
+      color: #333;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--sage, #84927d);
+      box-shadow: 0 0 0 2px rgba(132,146,125,0.15);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .upload-section {
+      background: var(--cream, #f8f6ef);
+      border: 1px dashed var(--sage, #84927d);
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .upload-section h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .upload-section p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .upload-section input {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .upload-info {
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .file-list {
+      font-size: 13px;
+      margin-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .consent-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 25px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .consent-group input {
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .contact-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+      padding: 16px 25px;
+      border-radius: 6px;
+    }
+
+    .contact-submit:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      .contact-page {
+        padding: 40px 15px 55px;
+      }
+
+      .contact-form {
+        padding: 25px 18px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Edénélia</h1>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Accueil</a></li>
-        <li><a href="./prestations.html">Prestations</a></li>
-        <li><a href="./contact.html" class="active">Contact</a></li>
-        <li><a href="./implantation.html">Implantation</a></li>
-      </ul>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">❧</span>
+      <span>
+        <strong>Edénélia</strong>
+        <small>Création · Entretien · Désencombrement</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" aria-expanded="false"
+      aria-controls="main-nav">Menu</button>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="creation.html">Création</a>
+      <a href="entretien.html">Entretien</a>
+      <a href="desencombrement.html">Désencombrement</a>
+      <a href="contact.html">Contact / Devis</a>
     </nav>
   </header>
 
   <main>
-    <section>
-      <h2>Contactez-nous</h2>
 
-      <!-- IMAGE CONTACT -->
-      <img src="./images/contact-jardin.jpg" alt="Illustration contact Edénélia" class="image-contact">
+    <!-- PRESENTATION -->
 
-      <!-- TEXTE DE CONTACT -->
+    <section class="creation-contact">
+      <h2>Parlons de votre projet</h2>
       <p>
-        Besoin d’un coup de main pour entretenir votre jardin ou désencombrer votre espace ?  
-        Contactez <strong>Edénélia</strong> — nous serons ravis d’échanger avec vous 🌿
+        Vous avez un projet d'aménagement, d'entretien
+        ou de désencombrement de jardin ?
+        Contactez-nous pour obtenir votre devis.
       </p>
+    </section>
 
-      <!-- COORDONNÉES -->
-      <div class="contact-info">
-        <h3>Nos coordonnées</h3>
-        <p>📞 <strong>Téléphone :</strong> 06 03 85 43 64</p>
-        <p>✉️ <strong>Email :</strong> <a href="mailto:edenelia.contact@gmail.com">edenelia.contact@gmail.com</a></p>
-        <p>📍 <strong>Zone d’intervention :</strong> Quimper et ses alentours</p>
+    <!-- FORMULAIRE -->
+
+    <section class="contact-page">
+
+      <div class="contact-container">
+
+        <div class="contact-heading">
+          <p class="eyebrow">Edénélia · Contact</p>
+          <h1>Demandez votre devis</h1>
+          <p>
+            Décrivez-nous votre projet et partagez quelques photos
+            ou vidéos de votre jardin. Ces éléments nous permettront
+            de mieux comprendre vos besoins et de préparer
+            un devis plus adapté.
+          </p>
+        </div>
+
+        <form
+          class="contact-form"
+          action="traitement-contact.php"
+          method="POST"
+          enctype="multipart/form-data"
+          id="contact-form"
+        >
+
+          <div class="contact-grid">
+
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Votre nom"
+                autocomplete="family-name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                placeholder="Votre prénom"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email">Adresse e-mail *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemple@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone *</label>
+              <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                placeholder="06 00 00 00 00"
+                autocomplete="tel"
+                required
+              >
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">Votre message *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Décrivez votre projet, les travaux souhaités et les particularités de votre jardin..."
+                required
+              ></textarea>
+            </div>
+
+          </div>
+
+          <!-- AJOUT DE PHOTOS ET VIDEOS -->
+
+          <div class="upload-section">
+
+            <h3>📷 Partagez des photos de votre jardin</h3>
+
+            <p>
+              Pour nous aider à mieux visualiser votre extérieur,
+              vous pouvez joindre plusieurs photos ou vidéos
+              de votre jardin.
+            </p>
+
+            <p>
+              Cela nous permettra de mieux évaluer les travaux
+              à réaliser et de gagner du temps dans la préparation
+              de votre devis.
+            </p>
+
+            <label for="fichiers">
+              Sélectionner vos photos et vidéos
+            </label>
+
+            <input
+              type="file"
+              id="fichiers"
+              name="fichiers[]"
+              accept="image/jpeg,image/png,image/webp,image/heic,video/mp4,video/quicktime"
+              multiple
+            >
+
+            <p class="upload-info">
+              Formats acceptés : JPG, PNG, WEBP, HEIC, MP4 et MOV.
+              Maximum 8 fichiers de 20 Mo chacun.
+            </p>
+
+            <div id="file-list" class="file-list"
+              aria-live="polite"></div>
+
+          </div>
+
+          <!-- CONSENTEMENT -->
+
+          <div class="consent-group">
+
+            <input
+              type="checkbox"
+              id="consentement"
+              name="consentement"
+              value="oui"
+              required
+            >
+
+            <label for="consentement">
+              J'accepte que les informations transmises soient
+              utilisées par Edénélia afin de répondre à ma demande
+              de contact et de devis. *
+            </label>
+
+          </div>
+
+          <!-- BOUTON -->
+
+          <button
+            type="submit"
+            class="button button-primary contact-submit"
+          >
+            Envoyer ma demande de devis →
+          </button>
+
+          <p class="upload-info">
+            * Champs obligatoires.
+          </p>
+
+        </form>
+
       </div>
 
-      <!-- FORMULAIRE DE CONTACT VIA FORMSPREE -->
-      <form class="form-contact" action="https://formspree.io/f/xldoqepg" method="POST">
-        <input type="text" name="name" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-        <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
     </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 Edénélia</p>
+  <!-- PIED DE PAGE -->
+
+  <footer class="site-footer">
+    <p>
+      <strong>Edénélia</strong> · Quimper et ses environs
+      · Création, entretien et désencombrement
+    </p>
+
+    <p class="footer-small">
+      © <span id="year"></span> Edénélia · Tous droits réservés
+    </p>
+
+    <p class="footer-small">
+      <a href="mentions-legales.html">Mentions légales</a>
+    </p>
   </footer>
 
-  <!-- Redirection après envoi du formulaire -->
+  <script src="script.js"></script>
+
+  <!-- CONTROLE DES FICHIERS -->
+
   <script>
-    const form = document.querySelector('.form-contact');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = 'thanks.html'; // page de remerciement
-        } else {
-          alert("Une erreur est survenue, réessayez.");
+    const fichiers = document.getElementById("fichiers");
+    const fileList = document.getElementById("file-list");
+    const formulaire = document.getElementById("contact-form");
+
+    const tailleMax = 20 * 1024 * 1024;
+    const nombreMax = 8;
+
+    fichiers.addEventListener("change", function () {
+
+      const selection = Array.from(fichiers.files);
+
+      fileList.innerHTML = "";
+
+      if (selection.length > nombreMax) {
+        alert("Vous pouvez sélectionner 8 fichiers maximum.");
+        fichiers.value = "";
+        return;
+      }
+
+      for (const fichier of selection) {
+
+        if (fichier.size > tailleMax) {
+          alert(
+            "Le fichier " + fichier.name +
+            " dépasse la limite de 20 Mo."
+          );
+
+          fichiers.value = "";
+          fileList.innerHTML = "";
+          return;
         }
-      }).catch(error => {
-        alert("Une erreur est survenue, réessayez.");
+
+      }
+
+      if (selection.length === 0) {
+        return;
+      }
+
+      const titre = document.createElement("strong");
+      titre.textContent = selection.length +
+        " fichier(s) sélectionné(s) :";
+
+      fileList.appendChild(titre);
+
+      const liste = document.createElement("ul");
+
+      selection.forEach(function (fichier) {
+        const element = document.createElement("li");
+        element.textContent = fichier.name;
+        liste.appendChild(element);
       });
+
+      fileList.appendChild(liste);
+
+    });
+
+    formulaire.addEventListener("submit", function (event) {
+
+      if (!formulaire.checkValidity()) {
+        event.preventDefault();
+        formulaire.reportValidity();
+        return;
+      }
+
+      const selection = Array.from(fichiers.files);
+
+      if (selection.length > nombreMax ||
+          selection.some(fichier => fichier.size > tailleMax)) {
+        event.preventDefault();
+        alert("Veuillez vérifier les fichiers sélectionnés.");
+      }
+
     });
   </script>
+
 </body>
 </html>

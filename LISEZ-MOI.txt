@@ -1,0 +1,17 @@
+EDÉNÉLIA — MAQUETTE DE PAGE D'ACCUEIL
+
+Fichiers :
+- index.html : structure de la page d'accueil
+- style.css : couleurs, mise en page et adaptation mobile
+- script.js : menu mobile et navigation des avis
+- images/hero-jardin.jpg : ajoutez ici votre propre photo de réalisation
+
+IMPORTANT AVANT PUBLICATION :
+1. Ajoutez une vraie photo de jardin nommée hero-jardin.jpg dans le dossier images.
+2. Remplacez contact@edenelia.fr dans index.html par votre adresse e-mail réelle.
+3. Les pages creation.html, entretien.html et desencombrement.html sont des liens à créer ensuite.
+4. Remplacez le texte d'avis provisoire dans script.js par de vrais témoignages avec l'accord des clients.
+5. Vérifiez les coordonnées et la zone d'intervention avant mise en ligne.
+
+Pour tester : ouvrez index.html dans votre navigateur.
+Pour publier avec Netlify Drop : glissez le dossier du site (ou son ZIP décompressé) dans Netlify Drop.
