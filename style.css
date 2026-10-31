@@ -1419,6 +1419,7 @@ header .logo a {
         font-size: 1.5rem;
         margin-bottom: 6px;
     }
+}
 /* Montages avant/après - Désencombrement */
 img[src*="desencombrement-interieur"],
 img[src*="desencombrement-exterieur"] {
@@ -1428,4 +1429,156 @@ img[src*="desencombrement-exterieur"] {
     height: 100%;
     margin: 0 auto;
     object-fit: contain;
+}
+/* ==========================================
+   ACCUEIL : ENCADRÉ NOUVEAUTÉ POINT D'EAU
+   ========================================== */
+
+.hero-nouveaute {
+  position: relative;
+  z-index: 1;
+  width: min(380px, 38%);
+  margin: 25px auto 25px 4%;
+  padding: 12px;
+  background: var(--cream);
+  border: 2px solid var(--sage);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.nouveaute-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 7px 18px;
+  background: var(--sage);
+  color: white;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.hero-nouveaute img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Les deux cadres côte à côte sur ordinateur */
+@media (min-width: 681px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .hero-nouveaute {
+    flex-shrink: 0;
+  }
+
+  .hero-panel {
+    flex-shrink: 0;
+  }
+}
+
+/* Adaptation sur téléphone */
+@media (max-width: 680px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .hero-nouveaute {
+    width: 100%;
+    max-width: 380px;
+    margin: 0;
+  }
+
+  .hero-panel {
+    width: 100%;
+    max-width: 520px;
+    margin: 0;
+  }
+}
+/* ==========================================
+   ACCUEIL : LES 3 ENCADRÉS
+   ========================================== */
+
+.hero-anniversaire {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 22px 20px;
+  background: rgba(255, 253, 247, 0.95);
+  border: 2px solid var(--sage);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.hero-anniversaire h2 {
+  color: var(--sage);
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+.hero-anniversaire p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Trois encadrés côte à côte sur grand écran */
+@media (min-width: 1100px) {
+  .hero {
+    gap: 18px;
+    padding: 25px 3%;
+  }
+
+  .hero-nouveaute {
+    width: 28%;
+    margin: 0;
+  }
+
+  .hero-panel {
+    width: 28%;
+    margin: 0;
+    padding: 24px 20px;
+  }
+}
+
+/* Sur écran intermédiaire, on empile les encadrés */
+@media (min-width: 681px) and (max-width: 1099px) {
+  .hero {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px 15px;
+  }
+
+  .hero-anniversaire {
+    flex: 1 1 45%;
+  }
+
+  .hero-nouveaute,
+  .hero-panel {
+    width: 45%;
+    margin: 0;
+  }
+}
+
+/* Sur téléphone, les encadrés restent bien lisibles */
+@media (max-width: 680px) {
+  .hero-anniversaire {
+    width: 100%;
+    max-width: 520px;
+    flex: none;
+  }
 }
