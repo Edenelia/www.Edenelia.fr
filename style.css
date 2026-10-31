@@ -1,697 +1,1286 @@
 :root {
+
   --sage: #78866B;
+
   --sage-light: #E8E9DF;
+
   --cream: #F7F5EF;
+
   --beige: #B69B7D;
+
   --ink: #45483F;
+
   --line: rgba(69, 72, 63, .28);
+
   --serif: Georgia, "Times New Roman", serif;
+
 }
+
+
 
 * {
+
   box-sizing: border-box;
+
 }
+
+
 
 html {
+
   scroll-behavior: smooth;
+
 }
+
+
 
 body {
+
   margin: 0;
+
   background: var(--cream);
+
   color: var(--ink);
+
   font-family: Arial, sans-serif;
+
 }
+
+
 
 a {
+
   color: inherit;
+
 }
 
+
+
 /* =========================
+
    EN-TÊTE ET NAVIGATION
+
    ========================= */
+
+
 
 .site-header {
+
   position: sticky;
+
   top: 0;
+
   z-index: 20;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 2rem;
+
   padding: 14px clamp(20px, 5vw, 72px);
+
   background: var(--sage);
+
   color: var(--cream);
+
   box-shadow: 0 2px 12px #28302022;
+
 }
+
+
 
 .brand {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   text-decoration: none;
+
 }
+
+
 
 .brand-mark {
+
   font-family: var(--serif);
+
   font-size: 4rem;
+
   line-height: .8;
+
 }
+
+
 
 .brand strong {
+
   display: block;
+
   font: 3.1rem/.95 var(--serif);
+
   letter-spacing: -.04em;
+
 }
+
+
 
 .brand small {
+
   display: block;
+
   margin-top: 7px;
+
   font: 1rem var(--serif);
+
 }
+
+
 
 .main-nav {
+
   display: flex;
+
   align-items: center;
+
   flex-wrap: wrap;
+
   gap: 9px;
+
 }
+
+
 
 .main-nav a {
+
   padding: 12px 16px;
+
   border-radius: 11px;
+
   background: var(--cream);
+
   color: var(--ink);
+
   text-decoration: none;
+
   font: 1rem var(--serif);
+
   transition: transform .2s, background .2s;
+
 }
+
+
 
 .main-nav a:hover,
+
 .main-nav a:focus-visible {
+
   background: white;
+
   transform: translateY(-2px);
+
   outline: 2px solid var(--beige);
+
 }
+
+
 
 .menu-toggle {
+
   display: none;
+
 }
 
+
+
 /* =========================
+
    PAGE D'ACCUEIL
+
    ========================= */
+
+
 
 .hero {
+
   position: relative;
+
   min-height: 390px;
+
   display: grid;
+
   place-items: center end;
+
   overflow: hidden;
+
   background: var(--sage-light);
+
 }
+
+
 
 .hero-photo {
+
   position: absolute;
+
   inset: 0;
+
   background:
+
     linear-gradient(90deg, #26301b22, #26301b00 65%),
+
     url("images/hero-jardin.jpg") center 52%/cover;
+
 }
+
+
 
 .hero-panel {
+
   position: relative;
+
   width: min(520px, 48%);
+
   margin: 35px 4% 35px 0;
+
   padding: 28px 34px;
+
   border-radius: 24px;
+
   background: var(--cream);
+
   text-align: center;
+
   box-shadow: 0 12px 36px #28302025;
+
 }
+
+
 
 .eyebrow {
+
   color: var(--sage);
+
   font-size: .78rem;
+
   font-weight: bold;
+
   letter-spacing: .12em;
+
   text-transform: uppercase;
+
 }
+
+
 
 h1,
+
 h2,
+
 h3,
+
 blockquote {
+
   font-family: var(--serif);
+
 }
+
+
 
 h1 {
+
   margin: 8px 0 12px;
+
   font-size: clamp(2.2rem, 4vw, 3.4rem);
+
   line-height: 1.02;
+
   font-weight: 500;
+
 }
+
+
 
 .hero-panel > p:not(.eyebrow) {
+
   font: italic 1.15rem/1.5 var(--serif);
+
 }
+
+
 
 .button {
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 16px;
+
   padding: 13px 24px;
+
   border-radius: 999px;
+
   text-decoration: none;
+
   font-weight: bold;
+
 }
+
+
 
 .button-primary {
+
   margin-top: 8px;
+
   background: var(--sage);
+
   color: var(--cream);
+
 }
+
+
 
 .button-primary:hover {
+
   background: var(--ink);
+
 }
+
+
 
 .section-wrap {
+
   background: var(--cream);
+
   padding: 30px clamp(18px, 4vw, 55px);
+
 }
+
+
 
 .section-heading {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 20px;
+
 }
+
+
 
 .section-heading span {
+
   height: 1px;
+
   flex: 1;
+
   background: var(--sage);
+
 }
+
+
 
 .section-heading h2 {
+
   margin: 0;
+
   color: var(--ink);
+
   font: 500 clamp(1.8rem, 3vw, 2.4rem) var(--serif);
+
   white-space: nowrap;
+
 }
+
+
 
 .section-subtitle {
+
   margin: 6px 0 22px;
+
   text-align: center;
+
   font: italic 1.1rem var(--serif);
+
   color: #5b6253;
+
 }
+
+
 
 .values-grid {
+
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
 }
+
+
 
 .value {
+
   padding: 12px 18px;
+
   text-align: center;
+
 }
+
+
 
 .value + .value {
+
   border-left: 1px solid var(--line);
+
 }
+
+
 
 .value-icon {
+
   display: block;
+
   color: var(--sage);
+
   font: 2.8rem var(--serif);
+
 }
+
+
 
 .value h3 {
+
   margin: 7px 0 0;
+
   font-size: 1.25rem;
+
   line-height: 1.25;
+
   font-weight: 500;
+
 }
 
+
+
 /* =========================
+
    AVIS CLIENTS
+
    ========================= */
+
+
 
 .reviews {
+
   position: relative;
+
   padding-top: 8px;
+
   padding-bottom: 30px;
+
 }
+
+
 
 .review-content {
+
   position: relative;
+
   z-index: 1;
+
   min-height: 190px;
+
   padding: 18px 30px;
+
   border: 1px solid var(--line);
+
   border-radius: 22px;
+
   background: #F7F5EFEE;
+
 }
+
+
 
 .review-slider {
+
   position: relative;
+
   max-width: 900px;
+
   margin: 12px auto 0;
+
   padding: 0 70px 28px;
+
 }
+
+
 
 .quote-mark {
+
   position: absolute;
+
   left: 0;
+
   top: -8px;
+
   margin: 0;
+
   color: var(--sage);
+
   font: 5rem var(--serif);
+
 }
+
+
 
 blockquote {
+
   margin: 12px 0 8px;
+
   font-size: clamp(1.15rem, 2vw, 1.5rem);
+
   line-height: 1.4;
+
   font-style: italic;
+
 }
+
+
 
 .review-author {
+
   margin: 0;
+
   font: 1rem var(--serif);
+
 }
+
+
 
 .review-controls {
+
   position: absolute;
+
   right: 0;
+
   bottom: 0;
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   color: var(--sage);
+
 }
+
+
 
 .review-controls button {
+
   width: 38px;
+
   height: 38px;
+
   border: 1px solid var(--sage);
+
   border-radius: 50%;
+
   background: transparent;
+
   color: var(--ink);
+
   font-size: 1.7rem;
+
   cursor: pointer;
+
 }
+
+
 
 .review-controls button:hover {
+
   background: var(--sage-light);
+
 }
+
+
 
 .review-note {
+
   margin: 10px 0 0;
+
   text-align: center;
+
   color: #72766b;
+
   font-size: .78rem;
+
 }
 
+
+
 /* =========================
+
    BANDEAU CONTACT ET PIED DE PAGE
+
    ========================= */
+
+
 
 .contact-strip {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   gap: 20px;
+
   padding: 24px clamp(20px, 8vw, 120px);
+
   background: var(--sage);
+
   color: var(--cream);
+
 }
+
+
 
 .contact-strip strong,
+
 .contact-strip span {
+
   display: block;
+
 }
+
+
 
 .contact-strip strong {
+
   font: 1.6rem var(--serif);
+
 }
+
+
 
 .contact-strip span {
+
   margin-top: 4px;
+
 }
+
+
 
 .button-light {
+
   background: var(--cream);
+
   color: var(--ink);
+
   white-space: nowrap;
+
 }
+
+
 
 .site-footer {
+
   padding: 22px 18px 14px;
+
   background: #626F59;
+
   color: var(--cream);
+
   text-align: center;
+
   font: 1rem var(--serif);
+
 }
+
+
 
 .site-footer p {
+
   margin: 6px 0;
+
 }
+
+
 
 .site-footer p span {
+
   padding: 0 8px;
+
 }
+
+
 
 .footer-small {
+
   opacity: .8;
+
   font: .78rem Arial, sans-serif;
+
 }
+
+
 
 /* =========================
+
    PAGES INTÉRIEURES
+
    ========================= */
 
+
+
 main {
+
   background: var(--cream);
+
 }
+
+
 
 /* Page Création */
 
+
+
 .creation-hero {
+
   background: var(--cream);
+
   padding: 55px 20px;
+
   text-align: center;
+
 }
+
+
 
 .creation-intro {
+
   background: var(--cream);
+
   padding: 35px clamp(20px, 6vw, 80px);
+
   text-align: center;
+
 }
+
+
 
 .creation-section {
+
   background: var(--cream);
+
   padding: 35px clamp(20px, 6vw, 80px);
+
 }
+
+
 
 .creation-card {
+
   background: var(--sage-light);
+
   border-radius: 18px;
+
   padding: 25px;
+
   margin-bottom: 20px;
+
 }
+
+
 
 .creation-contact {
+
   background: var(--sage);
+
   color: var(--cream);
+
   padding: 30px 20px;
+
   text-align: center;
+
 }
+
+
 
 .creation-contact a {
+
   color: var(--cream);
+
 }
 
+
+
 /* =========================
+
    ANCIENNES PAGES DU SITE
+
    ========================= */
+
+
 
 main section {
+
   background-color: var(--cream);
+
 }
+
+
 
 main section h2 {
+
   color: var(--ink);
+
 }
+
+
 
 main section p {
+
   line-height: 1.6;
+
 }
 
+
+
 /* =========================
+
    ADAPTATION TABLETTES
+
    ========================= */
+
+
 
 @media (max-width: 900px) {
+
   .site-header {
+
     gap: 12px;
+
   }
+
+
 
   .brand strong {
+
     font-size: 2.5rem;
+
   }
+
+
 
   .brand small {
+
     font-size: .85rem;
+
   }
+
+
 
   .main-nav a {
+
     padding: 10px 12px;
+
     font-size: .9rem;
+
   }
+
+
 
   .hero-panel {
+
     width: min(520px, 58%);
+
   }
+
 }
 
+
+
 /* =========================
+
    ADAPTATION TÉLÉPHONES
+
    ========================= */
+
+
 
 @media (max-width: 680px) {
+
   .site-header {
+
     position: relative;
+
     flex-wrap: wrap;
+
     padding: 14px 18px;
+
   }
+
+
 
   .brand-mark {
+
     font-size: 3rem;
+
   }
+
+
 
   .brand strong {
+
     font-size: 2.25rem;
+
   }
+
+
 
   .brand small {
+
     font-size: .75rem;
+
   }
+
+
 
   .menu-toggle {
+
     display: block;
+
     padding: 9px 13px;
+
     border: 1px solid var(--cream);
+
     border-radius: 8px;
+
     background: transparent;
+
     color: var(--cream);
+
   }
+
+
 
   .main-nav {
+
     display: none;
+
     width: 100%;
+
     flex-direction: column;
+
     align-items: stretch;
+
   }
+
+
 
   .main-nav.is-open {
+
     display: flex;
+
   }
+
+
 
   .main-nav a {
+
     text-align: center;
+
   }
+
+
 
   .hero {
+
     min-height: 460px;
+
     align-items: end;
+
     justify-items: center;
+
   }
+
+
 
   .hero-panel {
+
     width: calc(100% - 30px);
+
     margin: 0 15px 20px;
+
     padding: 22px 18px;
+
   }
+
+
 
   .hero-photo {
+
     background-position: center;
+
   }
+
+
 
   .values-grid {
+
     grid-template-columns: repeat(2, 1fr);
+
   }
+
+
 
   .value {
+
     padding: 16px 8px;
+
   }
+
+
 
   .value:nth-child(3) {
+
     border-left: 0;
+
   }
+
+
 
   .value:nth-child(n+3) {
+
     border-top: 1px solid var(--line);
+
   }
+
+
 
   .section-heading {
+
     gap: 10px;
+
   }
+
+
 
   .section-heading h2 {
+
     font-size: 1.65rem;
+
   }
+
+
 
   .review-content {
+
     padding: 18px 14px;
+
   }
+
+
 
   .review-slider {
+
     padding: 0 12px 52px 48px;
+
   }
+
+
 
   .quote-mark {
+
     font-size: 3.8rem;
+
   }
+
+
 
   .review-controls {
+
     right: 8px;
+
   }
+
+
 
   .contact-strip {
+
     flex-direction: column;
+
     text-align: center;
+
   }
+
+
 
   .site-footer p span {
+
     padding: 0 3px;
+
   }
+
+
 
   .creation-hero,
+
   .creation-intro,
+
   .creation-section {
+
     padding: 28px 18px;
+
   }
-.entretien-grid
+
+
+
   .creation-card {
+
     padding: 20px;
+
   }
+
 }
+
 header {
+
     background-color: #78866B;
+
     color: #F7F5EF;
+
 }
+
+
 
 header nav a,
+
 header .logo a {
+
     color: #F7F5EF;
-}
-/* Montage photos avant / après désherbage */
-.before-after {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+
 }
 
-.before-after-item {
-    flex: 1;
-    min-width: 0;
-    position: relative;
+/* ============================================
+   ENTRETIEN : 4 PRESTATIONS EN LIGNES
+   Styles propres a la page entretien uniquement
+   ============================================ */
+
+.entretien-list {
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
-.before-after-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.before-after-item span {
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 8px 0;
-    letter-spacing: 1px;
-}
-
-/* Affichage sur téléphone */
-@media (max-width: 600px) {
-    .before-after {
-        gap: 6px;
-    }
-
-    .before-after-item img {
-        height: 190px;
-    }
-}
-/* =========================
-   CARTES COMPACTES ENTRETIEN
-   ========================= */
-
-.entretien-grid {
+.entretien-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.entretien-card {
-    margin: 0;
-    padding: 16px;
-}
-
-.entretien-photo {
-    height: 170px;
-    width: 100%;
-    display: flex;
+    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
     align-items: center;
-    justify-content: center;
+    gap: clamp(20px, 4vw, 52px);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.entretien-row:last-child {
+    border-bottom: none;
+}
+
+.entretien-row-photo {
+    width: 100%;
+    height: 205px;
+    border-radius: 14px;
     overflow: hidden;
     background: var(--sage-light);
-    border-radius: 10px;
 }
 
-.entretien-photo > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.entretien-row-photo > img {
     display: block;
-}
-
-.entretien-photo.before-after {
-    gap: 8px;
-}
-
-.entretien-photo .before-after-item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.entretien-photo .before-after-item img {
     width: 100%;
-    height: calc(100% - 30px);
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
 }
 
-.entretien-photo .before-after-item span {
-    height: 30px;
-    padding: 5px 0;
-    font-size: 12px;
+/* Deux photos dans un seul cadre, sans separation excessive */
+.entretien-row-photo.entretien-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
 }
 
-/* Adaptation téléphone */
-@media (max-width: 600px) {
-    .entretien-grid {
-        grid-template-columns: 1fr;
+.entretien-comparison-item {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.entretien-comparison-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.entretien-comparison-item span {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--sage);
+    color: var(--cream);
+    font-size: .75rem;
+    font-weight: bold;
+    letter-spacing: .06em;
+    white-space: nowrap;
+}
+
+.entretien-row-content h3 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 500;
+}
+
+.entretien-row-content p {
+    margin: 0;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+/* Sur telephone : photo au-dessus du texte */
+@media (max-width: 680px) {
+    .entretien-row {
+        grid-template-columns: minmax(0, 1fr);
         gap: 14px;
+        padding: 18px 0 24px;
     }
 
-    .entretien-photo {
-        height: 160px;
+    .entretien-row-photo {
+        height: 195px;
+    }
+
+    .entretien-row-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
     }
 }
