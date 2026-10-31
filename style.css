@@ -824,7 +824,7 @@ main {
 
 
 
-.creation-contact a {
+.creation-contact a:not(.button-light) {
 
   color: var(--cream);
 
